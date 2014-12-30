@@ -1,0 +1,25 @@
+{
+  "name": "{{name}}",
+  "version": "0.1.0",
+  "description": "{{description}}",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "husky": "^0.6.2",
+    "istanbul": "^0.3.5",
+    "jscs": "^1.9.0",
+    "mocha": "^2.1.0"
+  },
+  "scripts": {
+    "check-style": "jscs lib/",
+    "check-coverage": "istanbul check-coverage --statement 100 --branch 100 --function 100 --line 100",
+    "coverage": "istanbul cover _mocha",
+    "test": "mocha",
+    "prepush": "npm run check-style && npm test && npm run check-coverage"
+  },
+  "jscsConfig": {
+    "preset": "google",
+    "validateIndentation": 4
+  }
+}
